@@ -24,6 +24,7 @@ let () =
   Arg.parse speclist (fun (_) -> ()) usage_msg;
   match !day with
       1 -> (solution !day Day1.part1 Day1.part2)
+    | 2 -> (solution !day Day2.part1 Day2.part2)
     | _ -> Printf.printf "Day %d not found\n" !day
   ;;
 

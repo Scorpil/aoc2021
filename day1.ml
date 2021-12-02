@@ -3,9 +3,6 @@ exception Err of string
 let fun_decidor a b =
   if a < b then (fun(x) -> x + 1) else (fun(x) -> x)
 
-let report _output =
-  Printf.printf "%d\n" _output
-
 let part1_inner input = match input with
     [] -> raise(Err "No input")
   | head::tail ->
