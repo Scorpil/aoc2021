@@ -1,1 +1,0 @@
-let input_as_int_list f input = f List.map (fun(x) -> int_of_string(x)) input
