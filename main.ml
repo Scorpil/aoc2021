@@ -17,8 +17,10 @@ let input = stdin_lines [] |> List.rev
 
 let solution day part1 part2 =
   Printf.printf "=== Day: %d === \n" day;
-  Printf.printf "Part 1: %d\n" (part1 input);
-  Printf.printf "Part 2: %d\n" (part2 input)
+  Printf.printf "Part 1: %d" (part1 input);
+  print_newline();
+  Printf.printf "Part 2: %d" (part2 input);
+  print_newline()
 
 let () =
   Arg.parse speclist (fun (_) -> ()) usage_msg;
@@ -28,6 +30,7 @@ let () =
     | 3 -> (solution !day Day3.part1 Day3.part2)
     | 4 -> (solution !day Day4.part1 Day4.part2)
     | 5 -> (solution !day Day5.part1 Day5.part2)
+    | 6 -> (solution !day Day6.part1 Day6.part2)
     | _ -> Printf.printf "Day %d not found\n" !day
   ;;
 
