@@ -42,8 +42,8 @@ let make_solution (map: t_map) =
     let is_in_table table point =
       match Hashtbl.find_opt table point with
           None -> false
-        | Some _ -> true
-    in
+        | Some _ -> true in
+
     let is_in_basin = is_in_table basin in
     let is_in_bank = is_in_table bank in
     let is_known point = (is_in_basin point) || (is_in_bank point) in
@@ -61,13 +61,9 @@ let make_solution (map: t_map) =
         if is_known point
         then loop tail_edges
         else
-          let current_value = value_at point in
-          if current_value != 9 then (
+          if (value_at point) != 9 then (
             add_to_basin point;
-            let fresh_edges = around point
-            |> List.filter is_not_known in
-            append_to_edges fresh_edges
-            |> loop)
+            around point |> List.filter is_not_known |> append_to_edges |> loop)
           else (
             add_to_bank point;
             loop tail_edges)
