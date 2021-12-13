@@ -37,6 +37,7 @@ let () =
     | 10 -> (solution !day Day10.part1 Day10.part2)
     | 11 -> (solution !day Day11.part1 Day11.part2)
     | 12 -> (solution !day Day12.part1 Day12.part2)
+    | 13 -> (solution !day Day13.part1 Day13.part2)
     | _ -> Printf.printf "Day %d not found\n" !day
   ;;
 
